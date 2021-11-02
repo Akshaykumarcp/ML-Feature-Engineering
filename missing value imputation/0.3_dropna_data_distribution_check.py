@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from pandas.core.dtypes.missing import isnull
 
 # load dataset
-data = pd.read_csv('J:\VSCODE_WORKSPACE\Feature-Engineering\dataset\\train.csv')
+data = pd.read_csv('dataset\\train.csv')
 
 data.shape
 # (1460, 81)
@@ -120,7 +120,7 @@ data2.shape
 # lets cross verify whether there is data distribution issue present or not
 
 data2.hist(bins=50, density=True, figsize=(12,12))
-plt.savefig('0.3_dataset_histogram_after_removing_5perc_NA.png')
+plt.savefig('missing value imputation/0.3_dataset_histogram_after_removing_5perc_NA.png')
 plt.show()
 
 # lets compare distribution for few features before and after
@@ -133,24 +133,24 @@ ax = fig.add_subplot(111)
 
 # original data
 data['GrLivArea'].hist(bins=50, ax=ax, density=True, color='red')
-#plt.savefig("data_distribution_before_after_for_GrLivArea.png")
+#plt.savefig("missing value imputation/data_distribution_before_after_for_GrLivArea.png")
 #plt.show()
 
 # preprocessed data
 # alpha makes color transparent to see overlay of 2 distribution
 data2['GrLivArea'].hist(bins=50, ax=ax, density=True, color='blue', alpha=0.8)
-plt.savefig("0.3_data_distribution_before_after_for_GrLivArea.png")
+plt.savefig("missing value imputation/0.3_data_distribution_before_after_for_GrLivArea.png")
 plt.show()
 
 # by looking at the plot, data distribution is preserved
 
 # lets have a look via density plot
 data['GrLivArea'].plot.density(color='red')
-plt.savefig("0.3_original_data_GrLivArea_density_plot.png")
+plt.savefig("missing value imputation/0.3_original_data_GrLivArea_density_plot.png")
 plt.show()
 
 data2['GrLivArea'].plot.density(color='blue')
-plt.savefig("0.3_preprocessed_data_GrLivArea_density_plot.png")
+plt.savefig("missing value imputation/0.3_preprocessed_data_GrLivArea_density_plot.png")
 plt.show()
 
 # same sort of distribution comparison can be made for other numerical features as well

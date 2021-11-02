@@ -1,12 +1,11 @@
 from matplotlib import colors
 import pandas as pd
 import numpy as np
-
 import matplotlib.pyplot as plt
 from pandas.core.dtypes.missing import isnull
 
 # load dataset
-data = pd.read_csv('dataset\\train.csv')
+data = pd.read_csv('J:\VSCODE_WORKSPACE\Feature-Engineering\dataset\\train.csv')
 
 data.shape
 # (1460, 81)
@@ -91,26 +90,3 @@ data_na.columns = ['feature','na_percentage']
 16        PoolQC       0.995205
 17         Fence       0.807534
 18   MiscFeature       0.963014 """
-
-# lets address the NA data points or observations
-
-# first, lets filter the NA's that are less than 5%
-
-# select features with no or less than 5% NA
-
-features_with_na_5perc = [feat for feat in data.columns if data[feat].isnull().mean() < 0.05]
-""" ['Id', 'MSSubClass', 'MSZoning', 'LotArea', 'Street', 'LotShape', 'LandContour', 'Utilities', 'LotConfig', 
-'LandSlope', 'Neighborhood', 'Condition1', 'Condition2', 'BldgType', 'HouseStyle', 'OverallQual', 'OverallCond', 'YearBuilt', 'YearRemodAdd', 'RoofStyle', 'RoofMatl', 'Exterior1st', 'Exterior2nd', 'MasVnrType', 'MasVnrArea', 'ExterQual', 'ExterCond', 'Foundation', 'BsmtQual', 'BsmtCond', 'BsmtExposure', 'BsmtFinType1', 
-'BsmtFinSF1', 'BsmtFinType2', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', 'Heating', 'HeatingQC', 'CentralAir', 'Electrical', '1stFlrSF', '2ndFlrSF', 'LowQualFinSF', 'GrLivArea', 'BsmtFullBath', 'BsmtHalfBath', 'FullBath', 'HalfBath', 'BedroomAbvGr', 'KitchenAbvGr', 'KitchenQual', 'TotRmsAbvGrd', 'Functional', 'Fireplaces', 'GarageCars', 'GarageArea', 'PavedDrive', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch', 'ScreenPorch', 'PoolArea', 'MiscVal', 'MoSold', 'YrSold', 'SaleType', 'SaleCondition', 'SalePrice']
-"""
-
-# since only 5% of NA are present, lets drop them 
-
-data2 = data[features_with_na_5perc].dropna()
-
-# lets compare the difference after droping NA
-data.shape
-# (1460, 81)
-
-data2.shape
-# (1412, 70)
