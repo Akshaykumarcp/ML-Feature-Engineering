@@ -1,1 +1,3 @@
-https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data
+1. https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data
+
+2. Run python program "download_titanic_dataset.py" for generating titaic dataset
