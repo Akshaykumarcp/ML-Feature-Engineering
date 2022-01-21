@@ -56,11 +56,13 @@
     - 10.5 Robust scaling
     - 10.6 Scaling to unit length
 11. Feature engineering mixed variable
-    - 7.1 Gaussian transformation
+    - 11.1 Engineering mixed variable
 12. Feature engineering date and time
     - 12.1 Engineering date
     - 12.1 Engineering time
 13. References & credits
+
+Note: Feature and Variable are used interchangeably. Feature and Variable convey same meaning.
 
 # 1. What is feature engineering ?
 
